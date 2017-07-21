@@ -39,7 +39,7 @@ def test_gen_sym():
     test_output = bodyOrtho1(100)
     assert test_output.sort() == correct.sort()
     print ('Finished 1_100')
-    '''
+    
     correct = read_file("tests/output/body_ortho2_10")
     test_output = bodyOrtho2(10)
     assert test_output.sort() == correct.sort()
@@ -49,7 +49,7 @@ def test_gen_sym():
     test_output = bodyOrtho2(100)
     assert test_output.sort() == correct.sort()
     print ('Finished 2_100')
-    '''
+    
     correct = read_file("tests/output/body_ortho3_10")
     test_output = bodyOrtho3(10)
     assert test_output.sort() == correct.sort()

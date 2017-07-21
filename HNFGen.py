@@ -52,7 +52,7 @@ def bodyOrtho1(size):
 
 # Generate symmetry preserving HNF's for
 # for body centered orthogonal lattice using 2nd basis
-"""
+
 def bodyOrtho2(size):
     symHNF = []
     numValid = 0
@@ -91,7 +91,7 @@ def bodyOrtho2(size):
                                                                                     symHNF.append(copy.deepcopy(HNF))
                                                                                     numValid += 1   
     return symHNF    
-"""                                                                          
+                                                                          
 # Generate symmetry preserving HNF's for
 # for body centered orthogonal lattice using 3rd basis
 def bodyOrtho3 (size):
