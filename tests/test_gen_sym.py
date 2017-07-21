@@ -4,7 +4,7 @@ Created on Jul 10, 2017
 @author: prkrj
 '''
 
-from HNFGen import bodyOrtho1, bodyOrtho3, bodyOrtho4
+from HNFGen import bodyOrtho1, bodyOrtho2, bodyOrtho3, bodyOrtho4
 import pytest
 
 def read_file(list_file):
