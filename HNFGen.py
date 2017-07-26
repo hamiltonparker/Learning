@@ -5,6 +5,7 @@ Created on Jun 23, 2017
 '''
 from __future__ import division
 
+import timeit
 import copy
 
 HNF = [[1,0,0],[0,1,0],[0,0,1]]
@@ -13,6 +14,7 @@ symHNF = []
 # Generate symmetry preserving HNF's for
 # for body centered orthogonal lattice using 2nd basis
 def bodyOrtho1(size):
+    start = timeit.timeit()
     symHNF =[]
     numValid = 0
     for i in range(size):
@@ -48,12 +50,15 @@ def bodyOrtho1(size):
                                                                             if ((d - d * (d - b) / a - (d - a - b * (d - b) / a) * e / c) / f).is_integer():
                                                                                 if ((e - d * (e - c) / a - e * (e - b * (e - c) / a) / c) / f).is_integer():
                                                                                     symHNF.append(copy.deepcopy(HNF))
+    end = timeit.timeit()
+    print (end - start)
     return symHNF
 
 # Generate symmetry preserving HNF's for
 # for body centered orthogonal lattice using 2nd basis
 
 def bodyOrtho2(size):
+    start = timeit.timeit()
     symHNF = []
     numValid = 0
     for i in range(size):
@@ -89,12 +94,15 @@ def bodyOrtho2(size):
                                                                             if ((d*e/a - b*e*e/a/c)/f).is_integer():
                                                                                 if (a * c * f) == size:
                                                                                     symHNF.append(copy.deepcopy(HNF))
-                                                                                    numValid += 1   
+                                                                                    numValid += 1
+    end = timeit.timeit()
+    print (end - start)
     return symHNF    
                                                                           
 # Generate symmetry preserving HNF's for
 # for body centered orthogonal lattice using 3rd basis
 def bodyOrtho3 (size):
+    start = timeit.timeit()
     symHNF = []
     numValid = 0
     for i in range(size):
@@ -125,11 +133,14 @@ def bodyOrtho3 (size):
                                                         if ((c*d/a - b*e/a)/f).is_integer():
                                                             numValid += 1
                                                             symHNF.append(copy.deepcopy(HNF))
+    end = timeit.timeit()
+    print (end - start)
     return symHNF
 
 # Generate symmetry preserving HNF's for
 # for body centered orthogonal lattice using 4th basis
 def bodyOrtho4 (size):
+    start = timeit.timeit()
     numValid = 0
     symHNF = []
     for i in range(size):
@@ -157,4 +168,6 @@ def bodyOrtho4 (size):
                                             if (((a + 2 * b) * e) / (c * f)).is_integer():
                                                 symHNF.append(copy.deepcopy(HNF))
                                                 numValid += 1
+    end = timeit.timeit()
+    print (end - start)
     return symHNF
