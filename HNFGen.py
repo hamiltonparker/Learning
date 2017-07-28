@@ -5,16 +5,28 @@ Created on Jun 23, 2017
 '''
 from __future__ import division
 
-import timeit
+from timeit import default_timer as timer
 import copy
+import csv
 
 HNF = [[1,0,0],[0,1,0],[0,0,1]]
 symHNF = []
 
 # Generate symmetry preserving HNF's for
 # for body centered orthogonal lattice using 2nd basis
-def bodyOrtho1(size):
-    start = timeit.timeit()
+def body_ortho_1(size):
+
+    """Generates symmetry preserving HNF's of a given size 
+       for a body centered orthogonal basis
+
+    Args:
+        size (int): The determinate of the HNF matricies
+
+    Returns:
+        list (int): The generated HNF matricies
+    """
+
+    start_time = timer()
     symHNF =[]
     numValid = 0
     for i in range(size):
@@ -50,15 +62,26 @@ def bodyOrtho1(size):
                                                                             if ((d - d * (d - b) / a - (d - a - b * (d - b) / a) * e / c) / f).is_integer():
                                                                                 if ((e - d * (e - c) / a - e * (e - b * (e - c) / a) / c) / f).is_integer():
                                                                                     symHNF.append(copy.deepcopy(HNF))
-    end = timeit.timeit()
-    print (end - start)
+    end_time = timer()
+    print ((end_time - start_time))
     return symHNF
 
 # Generate symmetry preserving HNF's for
 # for body centered orthogonal lattice using 2nd basis
 
-def bodyOrtho2(size):
-    start = timeit.timeit()
+def body_ortho_2(size):
+
+    """Generates symmetry preserving HNF's of a given size
+       for a body centered orthogonal basis
+
+    Args:
+        size (int): The determinate of the HNF matricies
+
+    Returns:
+        list (int): The generated HNF matricies
+    """
+
+    start_time = timer()
     symHNF = []
     numValid = 0
     for i in range(size):
@@ -95,14 +118,24 @@ def bodyOrtho2(size):
                                                                                 if (a * c * f) == size:
                                                                                     symHNF.append(copy.deepcopy(HNF))
                                                                                     numValid += 1
-    end = timeit.timeit()
-    print (end - start)
+    end_time = timer()
+    print (end_time - start_time)
     return symHNF    
                                                                           
 # Generate symmetry preserving HNF's for
 # for body centered orthogonal lattice using 3rd basis
-def bodyOrtho3 (size):
-    start = timeit.timeit()
+def body_ortho_3 (size):
+
+    """Generates symmetry preserving HNF's of a given size
+       for a body centered orthogonal basis
+
+    Args:
+        size (int): The determinate of the HNF matricies
+
+    Returns:
+        list (int): The generated HNF matricies
+    """
+    start_time = timer()
     symHNF = []
     numValid = 0
     for i in range(size):
@@ -133,14 +166,23 @@ def bodyOrtho3 (size):
                                                         if ((c*d/a - b*e/a)/f).is_integer():
                                                             numValid += 1
                                                             symHNF.append(copy.deepcopy(HNF))
-    end = timeit.timeit()
-    print (end - start)
+    end_time = timer()
+    print (end_time - start_time)
     return symHNF
 
-# Generate symmetry preserving HNF's for
-# for body centered orthogonal lattice using 4th basis
-def bodyOrtho4 (size):
-    start = timeit.timeit()
+
+def body_ortho_4 (size):
+
+    """Generates symmetry preserving HNF's of a given size
+       for a body centered orthogonal basis
+
+    Args:
+        size (int): The determinate of the HNF matricies
+
+    Returns:
+        list (int): The generated HNF matricies
+    """
+    start_time = timer()
     numValid = 0
     symHNF = []
     for i in range(size):
@@ -168,6 +210,31 @@ def bodyOrtho4 (size):
                                             if (((a + 2 * b) * e) / (c * f)).is_integer():
                                                 symHNF.append(copy.deepcopy(HNF))
                                                 numValid += 1
-    end = timeit.timeit()
-    print (end - start)
+    end_time = timer()
+    print (end_time - start_time)
     return symHNF
+
+def timing (func):
+
+    """Times the function for a set of sizes and wirtes a csv file with results
+
+    Args:
+        func (function): The function to be timed
+
+    Returns:
+        file (file object): A csv file with the function times
+    """
+
+    nums = [10, 100, 1000]
+    list = []
+    for i in nums:
+        start_time = timer()
+        func(i)
+        end_time = timer()
+        time = end_time - start_time
+        list.append(time)
+    
+    file = open('func_time.out', 'w')
+    with file as f:
+        writer = csv.writer(f, dialect='excel')
+        writer.writerow(list)

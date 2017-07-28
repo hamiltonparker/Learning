@@ -4,7 +4,7 @@ Created on Jul 10, 2017
 @author: prkrj
 '''
 
-from HNFGen import bodyOrtho1, bodyOrtho2, bodyOrtho3, bodyOrtho4
+from HNFGen import body_ortho_1, body_ortho_2, body_ortho_3, body_ortho_4
 import pytest
 
 def read_file(list_file):
@@ -31,41 +31,41 @@ def read_file(list_file):
 def test_gen_sym():
     
     correct = read_file("tests/output/body_ortho1_10")
-    test_output = bodyOrtho1(10)
+    test_output = body_ortho_1(10)
     assert test_output.sort() == correct.sort()
     print ('Finished 1_10')
 
     correct = read_file("tests/output/body_ortho1_100")
-    test_output = bodyOrtho1(100)
+    test_output = body_ortho_1(100)
     assert test_output.sort() == correct.sort()
     print ('Finished 1_100')
     
     correct = read_file("tests/output/body_ortho2_10")
-    test_output = bodyOrtho2(10)
+    test_output = body_ortho_2(10)
     assert test_output.sort() == correct.sort()
     print ('Finished 2_10')
 
     correct = read_file("tests/output/body_ortho2_100")
-    test_output = bodyOrtho2(100)
+    test_output = body_ortho_2(100)
     assert test_output.sort() == correct.sort()
     print ('Finished 2_100')
     
     correct = read_file("tests/output/body_ortho3_10")
-    test_output = bodyOrtho3(10)
+    test_output = body_ortho_3(10)
     assert test_output.sort() == correct.sort()
     print ('Finished 3_10')
 
     correct = read_file("tests/output/body_ortho3_100")
-    test_output = bodyOrtho3(100)
+    test_output = body_ortho_3(100)
     assert test_output.sort() == correct.sort()
     print ('Finished 3_100')
 
     correct = read_file("tests/output/body_ortho4_10")
-    test_output = bodyOrtho4(10)
+    test_output = body_ortho_4(10)
     assert test_output.sort() == correct.sort()
     print ('Finished 4_10')
 
     correct = read_file("tests/output/body_ortho4_100")
-    test_output = bodyOrtho4(100)
+    test_output = body_ortho_4(100)
     assert test_output.sort() == correct.sort()
     print ('Finished 4_100')
