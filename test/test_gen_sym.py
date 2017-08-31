@@ -1,0 +1,230 @@
+'''
+Created on Jul 10, 2017
+
+@author: prkrj
+'''
+import pytest
+import copy 
+import HNFGen as hg
+
+def read_file(list_file):
+    file = open(list_file, 'r')
+    i = 0
+    matrix = []
+    final_list = []
+    for line in file:
+        row = line.split()
+        if row != []:
+            new_row = []
+            for value in row:
+                new_value = int(value)
+                new_row.append(new_value)
+            matrix.append(new_row)
+            i += 1
+            if i == 3:
+                final_list.append(matrix)
+                matrix = []
+                i = 0
+    file.close()
+    return final_list
+
+def diff(list1, list2):
+    same = False
+    difference = []
+    for item1 in list1:
+        same = False
+        for item2 in list2:
+            if item1 == item2:
+                same = True
+                break
+        if same == False:
+            difference.append(copy.deepcopy(item1))
+    print ("Difference:")
+    print (difference)
+    return    
+
+def test_gen():
+    
+    correct = read_file("test/output/body_ortho1_10")
+    test_output = hg.body_ortho_1(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_ortho1_100")
+    test_output = hg.body_ortho_1(100)
+    assert sorted(test_output) == sorted(correct)
+    '''
+    correct = read_file("test/output/body_ortho2_10")
+    test_output = hg.body_ortho_2(10)
+    assert sorted(test_output) == sorted(correct)
+    '''
+    correct = read_file("test/output/body_ortho2_100")
+    test_output = hg.body_ortho_2(100)
+    assert test_output.sort() == correct.sort()
+ 
+    correct = read_file("test/output/body_ortho3_10")
+    test_output = hg.body_ortho_3(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_ortho3_100")
+    test_output = hg.body_ortho_3(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_ortho4_10")
+    test_output = hg.body_ortho_4(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_ortho4_100")
+    test_output = hg.body_ortho_4(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_mono1_10")
+    test_output = hg.base_mono_1(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_mono1_100")
+    test_output = hg.base_mono_1(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_mono2_10")
+    test_output = hg.base_mono_2(10)
+    assert sorted(test_output) == sorted(correct)
+    
+    correct = read_file("test/output/base_mono2_100")
+    test_output = hg.base_mono_2(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_mono3_10")
+    test_output = hg.base_mono_3(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_mono3_100")
+    test_output = hg.base_mono_3(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_ortho1_10")
+    test_output = hg.base_ortho_1(10)
+    assert sorted(test_output) == sorted(correct)
+    
+    correct = read_file("test/output/base_ortho1_100")
+    test_output = hg.base_ortho_1(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_ortho2_10")
+    test_output = hg.base_ortho_2(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_ortho2_100")
+    test_output = hg.base_ortho_2(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_ortho3_10")
+    test_output = hg.base_ortho_3(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_ortho3_100")
+    test_output = hg.base_ortho_3(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_ortho3_10")
+    test_output = hg.base_ortho_3(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/base_ortho3_100")
+    test_output = hg.base_ortho_3(100)
+    assert sorted(test_output) == sorted(correct)
+  
+    correct = read_file("test/output/body_cubic1_8")
+    test_output = hg.body_cubic_1(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_cubic1_108")
+    test_output = hg.body_cubic_1(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.body_cubic_1(10) == []
+
+    correct = read_file("test/output/body_cubic2_8")
+    test_output = hg.body_cubic_2(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_cubic2_108")
+    test_output = hg.body_cubic_2(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.body_cubic_2(10) == []
+
+    correct = read_file("test/output/body_cubic3_8")
+    test_output = hg.body_cubic_3(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_cubic3_108")
+    test_output = hg.body_cubic_3(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.body_cubic_3(10) == []
+
+    correct = read_file("test/output/body_cubic4_8")
+    test_output = hg.body_cubic_4(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_cubic4_108")
+    test_output = hg.body_cubic_4(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.body_cubic_4(10) == []
+
+    correct = read_file("test/output/body_cubic5_8")
+    test_output = hg.body_cubic_5(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_cubic5_108")
+    test_output = hg.body_cubic_5(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.body_cubic_5(10) == []
+
+    correct = read_file("test/output/body_cubic6_8")
+    test_output = hg.body_cubic_6(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_cubic6_108")
+    test_output = hg.body_cubic_6(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.body_cubic_6(10) == []
+
+    correct = read_file("test/output/body_cubic7_8")
+    test_output = hg.body_cubic_7(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_cubic7_108")
+    test_output = hg.body_cubic_7(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.body_cubic_7(10) == []
+
+    correct = read_file("test/output/body_cubic8_8")
+    test_output = hg.body_cubic_8(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_cubic8_108")
+    test_output = hg.body_cubic_8(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.body_cubic_8(10) == []
+
+    correct = read_file("test/output/body_tet1_10")
+    test_output = hg.body_tet_1(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_tet1_100")
+    test_output = hg.body_tet_1(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_tet2_10")
+    test_output = hg.body_tet_2(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_tet2_100")
+    test_output = hg.body_tet_2(100)
+    assert sorted(test_output) == sorted(correct)
