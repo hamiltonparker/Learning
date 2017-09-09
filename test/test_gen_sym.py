@@ -43,7 +43,7 @@ def diff(list1, list2):
     print (difference)
     return    
 
-def test_gen():
+def test_body_ortho():
     
     correct = read_file("test/output/body_ortho1_10")
     test_output = hg.body_ortho_1(10)
@@ -52,14 +52,10 @@ def test_gen():
     correct = read_file("test/output/body_ortho1_100")
     test_output = hg.body_ortho_1(100)
     assert sorted(test_output) == sorted(correct)
-    '''
+
     correct = read_file("test/output/body_ortho2_10")
     test_output = hg.body_ortho_2(10)
     assert sorted(test_output) == sorted(correct)
-    '''
-    correct = read_file("test/output/body_ortho2_100")
-    test_output = hg.body_ortho_2(100)
-    assert test_output.sort() == correct.sort()
  
     correct = read_file("test/output/body_ortho3_10")
     test_output = hg.body_ortho_3(10)
@@ -77,6 +73,10 @@ def test_gen():
     test_output = hg.body_ortho_4(100)
     assert sorted(test_output) == sorted(correct)
 
+    print ('Finshed Body Ortho')
+
+def test_base_mono():
+
     correct = read_file("test/output/base_mono1_10")
     test_output = hg.base_mono_1(10)
     assert sorted(test_output) == sorted(correct)
@@ -88,10 +88,6 @@ def test_gen():
     correct = read_file("test/output/base_mono2_10")
     test_output = hg.base_mono_2(10)
     assert sorted(test_output) == sorted(correct)
-    
-    correct = read_file("test/output/base_mono2_100")
-    test_output = hg.base_mono_2(100)
-    assert sorted(test_output) == sorted(correct)
 
     correct = read_file("test/output/base_mono3_10")
     test_output = hg.base_mono_3(10)
@@ -100,6 +96,10 @@ def test_gen():
     correct = read_file("test/output/base_mono3_100")
     test_output = hg.base_mono_3(100)
     assert sorted(test_output) == sorted(correct)
+
+    print ('Finished Base Mono')
+
+def test_base_ortho():
 
     correct = read_file("test/output/base_ortho1_10")
     test_output = hg.base_ortho_1(10)
@@ -132,6 +132,8 @@ def test_gen():
     correct = read_file("test/output/base_ortho3_100")
     test_output = hg.base_ortho_3(100)
     assert sorted(test_output) == sorted(correct)
+
+def test_body_cubic():
   
     correct = read_file("test/output/body_cubic1_8")
     test_output = hg.body_cubic_1(8)
@@ -212,6 +214,8 @@ def test_gen():
     assert sorted(test_output) == sorted(correct)
 
     assert hg.body_cubic_8(10) == []
+
+def test_body_tet():
 
     correct = read_file("test/output/body_tet1_10")
     test_output = hg.body_tet_1(10)
