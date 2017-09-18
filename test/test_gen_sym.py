@@ -232,3 +232,197 @@ def test_body_tet():
     correct = read_file("test/output/body_tet2_100")
     test_output = hg.body_tet_2(100)
     assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_tet3_10")
+    test_output = hg.body_tet_3(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_tet3_100")
+    test_output = hg.body_tet_3(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_tet4_10")
+    test_output = hg.body_tet_4(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_tet4_100")
+    test_output = hg.body_tet_4(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_tet5_10")
+    test_output = hg.body_tet_5(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/body_tet5_100")
+    test_output = hg.body_tet_5(100)
+    assert sorted(test_output) == sorted(correct)
+
+def test_face_ortho():
+    
+    correct = read_file("test/output/face_ortho1_10")
+    test_output = hg.face_ortho_1(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho1_100")
+    test_output = hg.face_ortho_1(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho2_10")
+    test_output = hg.face_ortho_2(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho2_100")
+    test_output = hg.face_ortho_2(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho3_10")
+    test_output = hg.face_ortho_3(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho3_100")
+    test_output = hg.face_ortho_3(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho4_10")
+    test_output = hg.face_ortho_4(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho4_100")
+    test_output = hg.face_ortho_4(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho5_10")
+    test_output = hg.face_ortho_5(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho5_100")
+    test_output = hg.face_ortho_5(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho6_10")
+    test_output = hg.face_ortho_6(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho6_100")
+    test_output = hg.face_ortho_6(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho7_10")
+    test_output = hg.face_ortho_7(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho7_100")
+    test_output = hg.face_ortho_7(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho8_10")
+    test_output = hg.face_ortho_8(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho8_100")
+    test_output = hg.face_ortho_8(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho9_10")
+    test_output = hg.face_ortho_9(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho9_100")
+    test_output = hg.face_ortho_9(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho10_10")
+    test_output = hg.face_ortho_10(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/face_ortho10_100")
+    test_output = hg.face_ortho_10(100)
+    assert sorted(test_output) == sorted(correct)
+
+def test_s_cubic():
+
+    correct = read_file("test/output/s_cubic1_8")
+    test_output = hg.s_cubic_1(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/s_cubic1_108")
+    test_output = hg.s_cubic_1(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.s_cubic_1(10) == []
+
+    correct = read_file("test/output/s_cubic2_8")
+    test_output = hg.s_cubic_2(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/s_cubic2_108")
+    test_output = hg.s_cubic_2(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.s_cubic_2(10) == []
+    
+    correct = read_file("test/output/s_cubic3_8")
+    test_output = hg.s_cubic_3(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/s_cubic3_108")
+    test_output = hg.s_cubic_3(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.s_cubic_3(10) == []
+
+    correct = read_file("test/output/s_cubic4_8")
+    test_output = hg.s_cubic_4(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/s_cubic4_108")
+    test_output = hg.s_cubic_4(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.s_cubic_4(10) == []
+
+    correct = read_file("test/output/s_cubic5_8")
+    test_output = hg.s_cubic_5(8)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/s_cubic5_108")
+    test_output = hg.s_cubic_5(108)
+    assert sorted(test_output) == sorted(correct)
+
+    assert hg.s_cubic_5(10) == []
+
+def test_trig():
+    
+    correct = read_file("test/output/trig1_10")
+    test_output = hg.trig_1(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/trig1_100")
+    test_output = hg.trig_1(100)
+    print (correct)
+    print (test_output)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/trig2_10")
+    test_output = hg.trig_2(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/trig2_100")
+    test_output = hg.trig_2(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/trig3_10")
+    test_output = hg.trig_3(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/trig3_100")
+    test_output = hg.trig_3(100)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/trig4_10")
+    test_output = hg.trig_4(10)
+    assert sorted(test_output) == sorted(correct)
+
+    correct = read_file("test/output/trig4_100")
+    test_output = hg.trig_4(100)
+    assert sorted(test_output) == sorted(correct)
