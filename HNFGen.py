@@ -1688,3 +1688,5 @@ def timing (func):
     with file as f:
         writer = csv.writer(f, dialect='excel')
         writer.writerow(list)
+
+    return list
