@@ -1,0 +1,14 @@
+language: python
+python:
+    - "2.7"
+    - "3.4"
+#command to install dependancies
+install:
+    - pip install .
+    - pip install tox
+    - pip install pytest
+#command to run tests
+script: tox
+
+after_success:
+    - codecov
